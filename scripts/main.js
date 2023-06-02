@@ -58,8 +58,9 @@ class AutoEffects {
 
     async updateActorHook(actor, diff, options, userID) {
         log("updateActorHook", actor);
-
-        this.config.forEach(cfg => this.actorConfigCheck(actor, cfg, diff));
+        if (game.users.activeGM) {
+            this.config.forEach(cfg => this.actorConfigCheck(actor, cfg, diff));
+        }
     }
 
     async actorConfigCheck(actor, cfg, diff) {
