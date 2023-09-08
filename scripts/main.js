@@ -40,9 +40,9 @@ function log(...args) {
 
 class AutoEffects {
 
-    _config = null;
+    #config = null;
     get config() {
-        return this._config ?? DEFAULT_CONFIG;
+        return this.#config ?? DEFAULT_CONFIG;
     }
 
     constructor() {
